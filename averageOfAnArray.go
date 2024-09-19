@@ -1,4 +1,4 @@
-// Program for average of an array 
+// Program for average of an array
 package main
 
 import "fmt"
