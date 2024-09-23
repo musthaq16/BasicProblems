@@ -10,13 +10,20 @@ func main() {
 }
 
 func subArrayWithZeroSumExistOrNot(nums []int) {
+
+	hashmap := make(map[int]struct{})
 	sum := 0
-	for i := 0; i < len(nums); i++ {
-		sum += nums[i]
-		if sum == 0 {
+
+	for _, num := range nums {
+		sum += num
+
+		if _, found := hashmap[sum]; found {
 			fmt.Println("Subarray with zero-sum exists")
 			return
 		}
+
+		hashmap[sum] = struct{}{}
 	}
+
 	fmt.Println("Subarray with zero-sum Not-exists")
 }
